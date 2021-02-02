@@ -102,5 +102,20 @@ describe('>>> Game', () => {
     expect(spy3).toBeCalled()
   })
 
-  it('should update all children', () => { })
+  it('should update all children', () => {
+    const spy1 = jest.spyOn(e1, 'Update')
+    const spy2 = jest.spyOn(e2, 'Update')
+    const spy3 = jest.spyOn(e3, 'Update')
+
+    expect(spy1).not.toBeCalled()
+    expect(spy2).not.toBeCalled()
+    expect(spy3).not.toBeCalled()
+
+    game.Update()
+
+    expect(spy1).toBeCalled()
+    expect(spy2).toBeCalled()
+    expect(spy3).toBeCalled()
+
+  })
 })
